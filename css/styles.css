@@ -1,0 +1,130 @@
+/* Basis */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #111827; /* Tailwind gray-900 */
+
+  /* Grundfarbton – angelehnt an das helle Logo/Beige */
+  background-color: #d3c8b4; /* var(--beige) */
+
+  /* Maserung als Textur – WICHTIG: Pfad von css/styles.css aus gesehen! */
+  background-image: url("../images/ML/holz-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* sorgt für leichteren, „transparenten“ Effekt */
+  background-blend-mode: multiply;
+}
+/* ============= ANIMATIONEN ============= */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grundzustand: noch NICHT sichtbar */
+.animate-fadein,
+.animate-fadein-delay,
+.animate-up,
+.animate-up-delay {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Sobald .in-view per JS hinzugefügt wird → Animation läuft */
+
+.animate-fadein.in-view {
+  animation: fadein 0.8s ease-out forwards;
+}
+
+.animate-fadein-delay.in-view {
+  animation: fadein 0.9s ease-out forwards;
+}
+
+.animate-up.in-view {
+  animation: fadeup 0.7s ease-out forwards;
+}
+
+.animate-up-delay.in-view {
+  animation: fadeup 0.8s ease-out forwards;
+}
+
+/* Stufenweise Verzögerung für Projektkarten etc. */
+
+.delay-1.in-view {
+  animation-delay: 0.2s !important;
+}
+
+.delay-2.in-view {
+  animation-delay: 0.35s !important;
+}
+
+.delay-3.in-view {
+  animation-delay: 0.5s !important;
+}
+
+/* ============= HOVER-EFFEKTE BILDER ============= */
+
+img.hover-zoom {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center center;
+}
+
+img.hover-zoom:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Logos etwas „ruhiger“ skalieren */
+
+img.logo-zoom {
+  transition: transform 0.3s ease;
+}
+
+img.logo-zoom:hover {
+  transform: scale(1.04);
+}
+
+/* ============= ACCESSIBILITY ============= */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadein,
+  .animate-fadein-delay,
+  .animate-up,
+  .animate-up-delay,
+  .delay-1,
+  .delay-2,
+  .delay-3 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  img.hover-zoom,
+  img.logo-zoom {
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
