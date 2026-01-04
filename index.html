@@ -7,15 +7,16 @@
     <title>Tischlerei Maier & Lehmann</title>
     <meta
       name="description"
-      content="Tischlerei Maier & Lehmann – Maßgefertigte Möbel, individuelle Holzarbeiten und moderner Möbelbau mit Präzision und Charakter."
+      content="Tischlerei Maier & Lehmann – Maßgefertigte Möbel und moderne Holzarbeiten mit präziser, klarer Gestaltung."
     />
 
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Styles (Animationen etc.) -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css" />
 
+    <!-- Farb-Variablen -->
     <style>
       :root {
         --mahagony: #42303b;
@@ -25,141 +26,14 @@
         --grey: #444547;
         --beige: #d3c8b4;
       }
-
-      .section-panel {
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .section-panel:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.26);
-      }
-
-      .btn-primary {
-        background-color: var(--leather);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        transition: background-color 0.2s ease, transform 0.2s ease,
-          box-shadow 0.2s ease, opacity 0.2s ease;
-      }
-
-      .btn-primary:hover {
-        opacity: 0.96;
-        transform: translateY(-1px);
-        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
-      }
-
-      .btn-primary:active {
-        transform: translateY(0);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
-      }
-
-      .btn-primary:focus-visible {
-        outline: 2px solid rgba(241, 221, 202, 0.9);
-        outline-offset: 2px;
-      }
-
-      .form-field {
-        border-radius: 0.375rem;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        padding: 0.6rem 0.75rem;
-        background-color: rgba(255, 255, 255, 0.85);
-        transition: box-shadow 0.2s ease, border-color 0.2s ease,
-          background-color 0.2s ease, transform 0.2s ease;
-      }
-
-      .form-field:hover {
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-        background-color: rgba(255, 255, 255, 0.95);
-      }
-
-      .form-field:focus {
-        outline: none;
-        border-color: var(--leather);
-        box-shadow: 0 0 0 2px rgba(158, 70, 54, 0.35),
-          0 12px 30px rgba(0, 0, 0, 0.25);
-        background-color: #ffffff;
-      }
-
-      .stat-box {
-        background-color: rgba(241, 221, 202, 0.15);
-        border: 1px solid rgba(241, 221, 202, 0.3);
-        border-radius: 0.75rem;
-        padding: 1.5rem 1rem;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .stat-box:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Scroll-to-top Button Sichtbarkeit */
-      .scroll-top-btn-visible {
-        opacity: 1 !important;
-        pointer-events: auto !important;
-      }
-
-      /* Lightbox Styling */
-      body.lightbox-open {
-        overflow: hidden;
-      }
-
-      #lightbox-overlay {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease;
-      }
-
-      #lightbox-overlay.lightbox-visible {
-        opacity: 1;
-        pointer-events: auto;
-      }
-
-      #lightbox-image {
-        max-width: 90vw;
-        max-height: 90vh;
-        border-radius: 0.75rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-      }
-
-      @media (max-width: 640px) {
-        section {
-          padding-top: 2.5rem;
-          padding-bottom: 2.5rem;
-        }
-      }
     </style>
   </head>
 
-  <body
-    class="text-[var(--parchment)] antialiased scroll-smooth"
-    style="
-      background-color: #d3c8b4;
-      background-image: linear-gradient(
-          rgba(211, 200, 180, 0.8),
-          rgba(211, 200, 180, 0.8)
-        ),
-        url('images/ML/Holz-background2.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-    "
-  >
+  <body class="antialiased" style="background-color: #efdbc8">
     <!-- HEADER -->
     <header
       class="fixed top-0 left-0 w-full z-50 text-[var(--parchment)] shadow-md"
-      style="
-        background-image: url('images/ML/holz-background.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: rgba(68, 69, 71, 0.9);
-        background-blend-mode: multiply;
-      "
+      style="background-color: rgba(68, 69, 71, 0.98)"
     >
       <div
         class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3"
@@ -176,12 +50,12 @@
           </span>
         </a>
 
-        <!-- Navigation -->
+        <!-- Navigation (Kontakt, Leistungen, Über uns, Arbeiten->Footer) -->
         <nav class="flex gap-5 text-sm">
-          <a href="#ueber" class="hover:underline">Über uns</a>
-          <a href="#leistungen" class="hover:underline">Leistungen</a>
-          <a href="#arbeiten" class="hover:underline">Arbeiten</a>
           <a href="#kontakt" class="hover:underline">Kontakt</a>
+          <a href="#leistungen" class="hover:underline">Leistungen</a>
+          <a href="#ueber" class="hover:underline">Über uns</a>
+          <a href="#arbeiten-footer" class="hover:underline">Arbeiten</a>
         </nav>
       </div>
     </header>
@@ -189,89 +63,219 @@
     <!-- MAIN CONTENT -->
     <main id="top" class="pt-20">
       <!-- HERO -->
-      <section class="relative min-h-[80vh] flex items-center">
+      <section
+        class="fullpage-section flex items-center"
+        style="background-color: #efdbc8"
+      >
         <div
-          class="absolute inset-0"
-          style="background-color: rgba(66, 48, 59, 0.5)"
-        ></div>
-
-        <div
-          class="relative px-6 py-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-16"
+          class="px-6 py-8 md:py-12 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-16"
         >
           <!-- Textblock -->
           <div
-            class="flex-1 text-white animate-fadein text-center md:text-left"
+            class="flex-1 animate-fadein text-center md:text-left flex flex-col justify-center"
           >
             <h1
               class="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 leading-tight"
+              style="color: var(--mahagony)"
             >
-              Handwerk mit Charakter.
+              Handwerk, klar und präzise.
             </h1>
             <p
-              class="text-base sm:text-lg text-white/90 mb-6 max-w-xl mx-auto md:mx-0"
+              class="text-base sm:text-lg mb-4 max-w-xl mx-auto md:mx-0"
+              style="color: rgba(68, 69, 71, 0.9)"
             >
-              Maßgefertigte Möbel, individuelle Holzarbeiten und moderner
-              Möbelbau – mit Präzision, Erfahrung und Liebe zum Detail.
+              Maßgefertigte Möbel und Holzlösungen – reduziert im Design, sauber
+              in der Ausführung, passend zu euren Räumen.
             </p>
-            <a
-              href="#kontakt"
-              class="inline-block px-6 py-3 rounded text-white font-medium btn-primary"
-            >
-              Kontakt aufnehmen
-            </a>
+
+            <!-- Button: schmaler, zentriert unter dem Text -->
+            <div class="mt-2 flex justify-center md:justify-start">
+              <a
+                href="#kontakt"
+                class="inline-block px-5 py-2 rounded font-medium text-sm btn-primary"
+              >
+                Kontakt aufnehmen
+              </a>
+            </div>
           </div>
 
-          <!-- Mosaik: 2x Sideboard, 2x Pool, alle verlinken auf #arbeiten -->
-          <div class="flex-1 max-w-md p-5 w-full relative animate-fadein-delay
-          rounded" style=" background-image:
-          url('images/ML/holz-background.png'); background-size: cover;
-          background-position: center; background-repeat: no-repeat;
-          background-color: rgba(68, 69, 71, 0.9); background-blend-mode:
-          multiply;>
-          <div class="rounded-lg p-3 shadow-lg">
-            <div class="grid grid-cols-2 grid-rows-2 gap-3">
-              <!-- Sideboard 1 -->
-              <div class="h-40 sm:h-48 bg-gray-300 overflow-hidden rounded">
-                <a href="#arbeiten" class="block h-full">
-                  <img
-                    src="images/ML/board1.png"
-                    alt="Sideboard – Frontansicht"
-                    class="w-full h-full object-cover hover-zoom"
-                  />
-                </a>
+          <!-- Großes Logo -->
+          <div class="flex-1 max-w-md w-full relative animate-fadein-delay">
+            <div
+              class="rounded-lg p-5 md:p-6 shadow-lg flex items-center justify-center"
+              style="background-color: rgba(68, 69, 71, 0.95)"
+            >
+              <img
+                src="images/ML/IMG-20251129-WA0006.jpg"
+                alt="Tischlerei Maier & Lehmann Logo groß"
+                class="w-full max-w-xs sm:max-w-sm h-auto object-contain logo-zoom"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKT (direkt unter Hero) -->
+      <section
+        id="kontakt"
+        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div
+            class="px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 section-panel animate-up"
+            style="background-color: var(--grey)"
+          >
+            <h2
+              class="text-2xl sm:text-3xl font-serif mb-6 animate-up"
+              style="color: var(--parchment)"
+            >
+              Kontakt
+            </h2>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center animate-up-delay"
+            >
+              <!-- Kontaktdaten -->
+              <div
+                class="space-y-5 sm:space-y-6 text-sm flex flex-col justify-center"
+              >
+                <p style="color: rgba(241, 221, 202, 0.9)">
+                  <strong>Website:</strong><br />
+                  <a
+                    href="https://tischlerei-maierlehmann.de"
+                    class="underline"
+                    style="color: var(--parchment)"
+                  >
+                    tischlerei-maierlehmann.de
+                  </a>
+                </p>
+                <p style="color: rgba(241, 221, 202, 0.9)">
+                  <strong>E-Mail:</strong><br />
+                  <a
+                    href="mailto:kontakt@maierlehmann.de"
+                    class="underline"
+                    style="color: var(--parchment)"
+                  >
+                    kontakt@maierlehmann.de
+                  </a>
+                </p>
+                <p style="color: rgba(241, 221, 202, 0.9)">
+                  <strong>Telefon:</strong><br />
+                  <span class="opacity-80">+49 (0) XXX / XXXXXXX</span>
+                </p>
+                <p style="color: rgba(241, 221, 202, 0.9)">
+                  <strong>Adresse:</strong><br />
+                  <span class="opacity-80">Straße 123, 12345 Musterstadt</span>
+                </p>
               </div>
 
-              <!-- Sideboard 2 -->
-              <div class="h-40 sm:h-48 bg-gray-300 overflow-hidden rounded">
-                <a href="#arbeiten" class="block h-full">
-                  <img
-                    src="images/ML/board2.png"
-                    alt="Sideboard – geöffnet"
-                    class="w-full h-full object-cover hover-zoom"
+              <!-- Kontaktformular -->
+              <div
+                class="relative rounded-md overflow-hidden shadow-md bg-white/95"
+              >
+                <form
+                  class="relative p-6 sm:p-8 space-y-3 text-gray-900 text-sm w-full flex flex-col"
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    class="w-full form-field"
                   />
-                </a>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-Mail"
+                    class="w-full form-field"
+                  />
+                  <textarea
+                    name="message"
+                    rows="4"
+                    placeholder="Nachricht..."
+                    class="w-full form-field"
+                  ></textarea>
+
+                  <button
+                    type="submit"
+                    class="w-full px-4 py-2 rounded font-medium mt-2 btn-primary"
+                  >
+                    Nachricht senden
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEISTUNGEN -->
+      <section
+        id="leistungen"
+        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div
+            class="section-panel px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
+            style="background-color: var(--grey)"
+          >
+            <h2
+              class="text-2xl sm:text-3xl font-serif mb-6 text-center"
+              style="color: var(--parchment)"
+            >
+              Leistungen
+            </h2>
+
+            <p
+              class="text-sm sm:text-base text-center max-w-2xl mx-auto mb-8 sm:mb-10"
+              style="color: rgba(241, 221, 202, 0.9)"
+            >
+              Wir planen, fertigen und montieren individuelle Holzlösungen – vom
+              Einzelstück bis zur komplett eingerichteten Fläche.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 text-sm">
+              <div
+                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
+              >
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Möbelbau & Einbauten
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Schränke, Sideboards, Regale und Einbauten nach Maß.
+                </p>
               </div>
 
-              <!-- Pool 1 -->
-              <div class="h-40 sm:h-48 bg-gray-300 overflow-hidden rounded">
-                <a href="#arbeiten" class="block h-full">
-                  <img
-                    src="images/ML/pool1.png"
-                    alt="Pooldeck – Gesamtansicht"
-                    class="w-full h-full object-cover hover-zoom"
-                  />
-                </a>
+              <div
+                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
+              >
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Praxen & Arbeitsräume
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Holzlösungen für funktionale, ruhige Arbeitsumgebungen.
+                </p>
               </div>
 
-              <!-- Pool 2 -->
-              <div class="h-40 sm:h-48 bg-gray-300 overflow-hidden rounded">
-                <a href="#arbeiten" class="block h-full">
-                  <img
-                    src="images/ML/pool2.png"
-                    alt="Pooldeck – Treppe und Rand"
-                    class="w-full h-full object-cover hover-zoom"
-                  />
-                </a>
+              <div
+                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
+              >
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Gastronomie & Tresen
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Theken und Möblierung für Cafés, Bars oder Restaurants.
+                </p>
+              </div>
+
+              <div
+                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
+              >
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Präsentation & Schaufenster
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Präsentationsmöbel und Details für starke Auftritte.
+                </p>
               </div>
             </div>
           </div>
@@ -279,455 +283,154 @@
       </section>
 
       <!-- ÜBER UNS -->
-      <section id="ueber" class="px-4 py-14 md:py-16">
-        <div
-          class="max-w-6xl mx-auto overflow-hidden section-panel animate-up"
-          style="background-color: rgba(109, 45, 46, 0.5)"
-        >
-          <div class="px-6 sm:px-8 py-10 sm:py-12">
-            <div class="mb-6 flex justify-start animate-fadein-delay">
-              <img
-                src="images/ML/IMG-20251129-WA00009.jpg"
-                alt="Maier & Lehmann Logo Variante"
-                class="h-20 sm:h-24 w-auto object-contain logo-zoom"
-              />
-            </div>
+      <section
+        id="ueber"
+        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div
+            class="overflow-hidden section-panel animate-up"
+            style="background-color: var(--grey)"
+          >
+            <div class="px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12">
+              <div class="mb-6 flex justify-start animate-fadein-delay">
+                <img
+                  src="images/ML/IMG-20251129-WA00009.jpg"
+                  alt="Maier & Lehmann Logo Variante"
+                  class="h-20 sm:h-24 w-auto object-contain logo-zoom"
+                />
+              </div>
 
+              <h2
+                class="text-2xl sm:text-3xl font-serif mb-5 animate-up"
+                style="color: var(--parchment)"
+              >
+                Über uns
+              </h2>
+
+              <p
+                class="mb-6 leading-relaxed animate-up-delay max-w-3xl text-sm sm:text-base"
+                style="color: rgba(241, 221, 202, 0.9)"
+              >
+                Wir sind zwei Tischler mit zusammen über 20 Jahren Erfahrung im
+                Möbel- und Innenausbau. Unser Fokus liegt auf klaren Formen,
+                sauberen Details und robusten Lösungen, die sich im Alltag
+                bewähren.
+              </p>
+
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm animate-up-delay"
+                style="color: rgba(241, 221, 202, 0.9)"
+              >
+                <li>✔ Maßgefertigte Möbel & Einbauten</li>
+                <li>✔ Holzprojekte für Wohn- & Arbeitsbereiche</li>
+                <li>✔ Präzise Ausführung vom Entwurf bis zur Montage</li>
+                <li>✔ Direkte Abstimmung und kurze Wege</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARBEITEN – Bildgalerie -->
+      <section
+        id="arbeiten"
+        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div
+            class="px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 section-panel animate-up"
+            style="background-color: var(--grey)"
+          >
             <h2
-              class="text-2xl sm:text-3xl font-serif text-[var(--parchment)] mb-6 animate-up"
+              class="text-2xl sm:text-3xl font-serif mb-5 animate-up"
+              style="color: var(--parchment)"
             >
-              Über uns
+              Arbeiten
             </h2>
 
             <p
-              class="mb-6 leading-relaxed animate-up-delay max-w-3xl text-[var(--parchment)]"
+              class="text-sm mb-6 sm:mb-8"
+              style="color: rgba(241, 221, 202, 0.9)"
             >
-              Wir sind zwei erfahrene Tischler mit zusammen über 20 Jahren
-              Erfahrung im Möbelbau und in der Holzverarbeitung. Unser Fokus
-              liegt auf maßgeschneiderten Lösungen – von der ersten Skizze bis
-              zum fertig montierten Möbelstück. Jedes Projekt wird individuell
-              geplant, präzise gefertigt und mit Blick fürs Detail umgesetzt.
+              Auswahl realisierter Projekte. Ein Klick öffnet das Bild größer.
             </p>
 
-            <ul
-              class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm animate-up-delay text-[var(--parchment)]"
-            >
-              <li>✔ Maßgefertigte Möbel & Einzelstücke</li>
-              <li>✔ Holzprojekte für Wohn- und Arbeitsbereiche</li>
-              <li>✔ Aufarbeitung & Veredelung von Holzelementen</li>
-              <li>✔ Persönliche Beratung und direkte Abstimmung</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- LEISTUNGEN -->
-      <section id="leistungen" class="px-4 py-14 md:py-16">
-        <div
-          class="max-w-6xl mx-auto section-panel px-6 sm:px-8 py-10 sm:py-12 animate-up"
-          style="background-color: rgba(241, 221, 202, 0.4)"
-        >
-          <h2
-            class="text-2xl sm:text-3xl font-serif mb-6 text-center"
-            style="color: #42303b"
-          >
-            Leistungen
-          </h2>
-
-          <div class="grid md:grid-cols-2 gap-10 items-start">
-            <!-- Text / Story -->
-            <div class="space-y-4 text-gray-900">
-              <p class="text-sm leading-relaxed">
-                Wir verbinden traditionelles Tischlerhandwerk mit moderner,
-                computergestützter Präzision. Handarbeit, Erfahrung und Gefühl
-                für Material treffen auf genaue Planung und saubere Ausführung –
-                so entstehen Möbel und Holzlösungen, die zu euch, euren Räumen
-                und eurem Alltag passen.
-              </p>
-              <p class="text-sm leading-relaxed">
-                Ob hochwertige Einbaumöbel, besondere Einzelstücke oder
-                durchdachte Holzkonzepte für Praxis- und Geschäftsräume – wir
-                bringen eure Ideen in Form. Alles aus Holz, alles aus einer
-                Hand: von der ersten Skizze bis zur Montage vor Ort.
-              </p>
-              <p class="text-sm leading-relaxed">
-                Für größere Projekte arbeiten wir bei Bedarf mit einem Netzwerk
-                aus erfahrenen Handwerkspartnern zusammen, damit alles fachlich
-                sauber, termintreu und im gewünschten Qualitätsniveau umgesetzt
-                werden kann.
-              </p>
-            </div>
-
-            <!-- Leistungs-Grid -->
-            <div class="grid sm:grid-cols-2 gap-6 text-[var(--parchment)]">
-              <div
-                class="relative rounded-lg shadow-md p-5 hover:-translate-y-1 transition-transform bg-cover bg-center overflow-hidden"
-                style="background-image: url('images/ML/holz-background.png')"
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+              <!-- Sideboard · Front -->
+              <figure
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up"
               >
-                <div
-                  class="absolute inset-0"
-                  style="background-color: rgba(0, 0, 0, 0.55)"
-                ></div>
-                <div class="relative z-10">
-                  <h3 class="text-base font-semibold mb-1">
-                    Möbelbau & Einbauten
-                  </h3>
-                  <p class="text-sm text-[var(--parchment)]/85">
-                    Maßgefertigte Möbel, Einbauschränke und Stauraumlösungen,
-                    die exakt in eure Räume passen – funktional, langlebig,
-                    ästhetisch.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="relative rounded-lg shadow-md p-5 hover:-translate-y-1 transition-transform bg-cover bg-center overflow-hidden"
-                style="background-image: url('images/ML/holz-background.png')"
-              >
-                <div
-                  class="absolute inset-0"
-                  style="background-color: rgba(0, 0, 0, 0.55)"
-                ></div>
-                <div class="relative z-10">
-                  <h3 class="text-base font-semibold mb-1">
-                    Praxen & Arbeitsräume
-                  </h3>
-                  <p class="text-sm text-[var(--parchment)]/85">
-                    Durchdachte Holzlösungen für Praxis- und Arbeitsbereiche –
-                    klar, modern und auf die Abläufe im Alltag abgestimmt.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="relative rounded-lg shadow-md p-5 hover:-translate-y-1 transition-transform bg-cover bg-center overflow-hidden"
-                style="background-image: url('images/ML/holz-background.png')"
-              >
-                <div
-                  class="absolute inset-0"
-                  style="background-color: rgba(0, 0, 0, 0.55)"
-                ></div>
-                <div class="relative z-10">
-                  <h3 class="text-base font-semibold mb-1">
-                    Gastronomie & Tresen
-                  </h3>
-                  <p class="text-sm text-[var(--parchment)]/85">
-                    Theken, Sitzmöbel und Holzdetails für Cafés, Bars oder
-                    Restaurants – robust im Einsatz, stimmig im
-                    Erscheinungsbild.
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="relative rounded-lg shadow-md p-5 hover:-translate-y-1 transition-transform bg-cover bg-center overflow-hidden"
-                style="background-image: url('images/ML/holz-background.png')"
-              >
-                <div
-                  class="absolute inset-0"
-                  style="background-color: rgba(0, 0, 0, 0.55)"
-                ></div>
-                <div class="relative z-10">
-                  <h3 class="text-base font-semibold mb-1">
-                    Schaufenster & Retail
-                  </h3>
-                  <p class="text-sm text-[var(--parchment)]/85">
-                    Präsentationsmöbel und Holzelemente, die eure Produkte in
-                    den Fokus rücken und eure Marke sichtbar machen.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAKTEN / STATISTIK -->
-      <section id="fakten" class="px-4 py-14 md:py-16">
-        <div
-          class="max-w-6xl mx-auto section-panel px-6 sm:px-8 py-12 text-center animate-up"
-          style="background-color: rgba(109, 45, 46, 0.45)"
-        >
-          <h2 class="text-2xl sm:text-3xl font-serif mb-10">
-            Zahlen & Vertrauen
-          </h2>
-
-          <div class="grid sm:grid-cols-3 gap-6">
-            <div class="stat-box">
-              <div class="mb-2 text-2xl">🪚</div>
-              <p class="text-4xl font-bold text-[var(--parchment)]">100+</p>
-              <p class="text-sm text-[var(--parchment)]/80">
-                umgesetzte Holzprojekte
-              </p>
-            </div>
-
-            <div class="stat-box">
-              <div class="mb-2 text-2xl">📐</div>
-              <p class="text-4xl font-bold text-[var(--parchment)]">20+</p>
-              <p class="text-sm text-[var(--parchment)]/80">Jahre Erfahrung</p>
-            </div>
-
-            <div class="stat-box">
-              <div class="mb-2 text-2xl">🤝</div>
-              <p class="text-4xl font-bold text-[var(--parchment)]">100%</p>
-              <p class="text-sm text-[var(--parchment)]/80">
-                Fokus auf Zufriedenheit
-              </p>
-            </div>
-          </div>
-
-          <p class="mt-6 text-xs text-[var(--parchment)]/70">
-            *Alle Projekte entstehen in enger Abstimmung mit unseren Kunden –
-            von der ersten Idee bis zur letzten Schraube.
-          </p>
-        </div>
-      </section>
-
-      <!-- ARBEITEN -->
-      <section id="arbeiten" class="px-4 py-14 md:py-16">
-        <div
-          class="max-w-6xl mx-auto px-6 sm:px-8 py-10 sm:py-12 section-panel animate-up"
-          style="background-color: rgba(241, 221, 202, 0.5)"
-        >
-          <h2
-            class="text-2xl sm:text-3xl font-serif mb-4 animate-up"
-            style="color: #42303b"
-          >
-            Arbeiten
-          </h2>
-
-          <p class="text-sm text-gray-800 mb-8">
-            Eine kleine Auswahl aktueller Projekte – vom präzise gearbeiteten
-            Sideboard bis zur komplett integrierten Poolanlage im Garten.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- PROJEKT 1: Sideboard / Meisterstück -->
-            <article
-              class="bg-white shadow-sm rounded-lg overflow-hidden animate-up text-gray-900 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <img
-                src="images/ML/board1.png"
-                alt="Sideboard – Frontansicht"
-                class="w-full h-56 sm:h-64 object-cover hover-zoom lightbox-trigger"
-              />
-              <div class="p-4 sm:p-5">
-                <h3 class="text-lg font-semibold mb-1" style="color: #6d2d2e">
-                  Sideboard – Meisterstück
-                </h3>
-                <p class="text-sm text-gray-600">
-                  Schwebendes Sideboard mit klaren Linien, dunklen Fronten und
-                  massiven Holzrahmen – präzise Fugen, reduzierte Optik.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="bg-white shadow-sm rounded-lg overflow-hidden animate-up delay-1 text-gray-900 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <img
-                src="images/ML/board2.png"
-                alt="Sideboard – geöffnete Türen und Schubladen"
-                class="w-full h-56 sm:h-64 object-cover hover-zoom lightbox-trigger"
-              />
-              <div class="p-4 sm:p-5">
-                <h3 class="text-lg font-semibold mb-1" style="color: #6d2d2e">
-                  Stauraum im Detail
-                </h3>
-                <p class="text-sm text-gray-600">
-                  Durchdachte Innenaufteilung mit Türen und Schubladen, die
-                  Stauraum strukturiert und gut zugänglich machen.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="bg-white shadow-sm rounded-lg overflow-hidden animate-up delay-2 text-gray-900 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <img
-                src="images/ML/board4.png"
-                alt="Sideboard – Beleuchtung und Innenraum"
-                class="w-full h-56 sm:h-64 object-cover hover-zoom lightbox-trigger"
-              />
-              <div class="p-4 sm:p-5">
-                <h3 class="text-lg font-semibold mb-1" style="color: #6d2d2e">
-                  Licht & Inszenierung
-                </h3>
-                <p class="text-sm text-gray-600">
-                  Feine Beleuchtung betont Kanten und Proportionen und setzt das
-                  Möbel als Einzelstück in Szene.
-                </p>
-              </div>
-            </article>
-
-            <!-- PROJEKT 2: Pooldeck -->
-            <article
-              class="bg-white shadow-sm rounded-lg overflow-hidden animate-up delay-1 text-gray-900 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <img
-                src="images/ML/pool1.png"
-                alt="Poolanlage mit Holzdeck und Treppe"
-                class="w-full h-56 sm:h-64 object-cover hover-zoom lightbox-trigger"
-              />
-              <div class="p-4 sm:p-5">
-                <h3 class="text-lg font-semibold mb-1" style="color: #6d2d2e">
-                  Poolanlage mit Holzdeck
-                </h3>
-                <p class="text-sm text-gray-600">
-                  Maßgefertigtes Deck rund um den Pool mit integrierter
-                  Treppenanlage, Technikzugang und Glasgeländer.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="bg-white shadow-sm rounded-lg overflow-hidden animate-up delay-2 text-gray-900 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <img
-                src="images/ML/pool2.png"
-                alt="Pooldeck – Nahaufnahme von Treppe und Rand"
-                class="w-full h-56 sm:h-64 object-cover hover-zoom lightbox-trigger"
-              />
-              <div class="p-4 sm:p-5">
-                <h3 class="text-lg font-semibold mb-1" style="color: #6d2d2e">
-                  Saubere Übergänge
-                </h3>
-                <p class="text-sm text-gray-600">
-                  Exakte Gehrungen und bündige Anschlüsse sorgen für ein ruhiges
-                  Bild und eine angenehme Haptik barfuß.
-                </p>
-              </div>
-            </article>
-
-            <article
-              class="bg-white shadow-sm rounded-lg overflow-hidden animate-up delay-3 text-gray-900 transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <img
-                src="images/ML/pool3.png"
-                alt="Pool – Blick ins Wasser mit Holzrahmung"
-                class="w-full h-56 sm:h-64 object-cover hover-zoom lightbox-trigger"
-              />
-              <div class="p-4 sm:p-5">
-                <h3 class="text-lg font-semibold mb-1" style="color: #6d2d2e">
-                  Holz trifft Wasser
-                </h3>
-                <p class="text-sm text-gray-600">
-                  Das warme Holz bildet einen klaren Rahmen für das Wasser –
-                  robust im Außenbereich und optisch reduziert.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- KONTAKT -->
-      <section id="kontakt" class="px-4 py-14 md:py-16">
-        <div
-          class="max-w-6xl mx-auto px-6 sm:px-8 py-10 sm:py-12 section-panel animate-up"
-          style="background-color: rgba(66, 48, 59, 0.5)"
-        >
-          <h2
-            class="text-2xl sm:text-3xl font-serif mb-6 animate-up"
-            style="color: #f1ddca"
-          >
-            Kontakt
-          </h2>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center animate-up-delay"
-          >
-            <!-- Kontaktdaten -->
-            <div class="space-y-10 text-sm flex flex-col justify-center">
-              <p>
-                <strong>Website:</strong><br />
-                <a href="https://tischlerei-maierlehmann.de" class="underline">
-                  tischlerei-maierlehmann.de
-                </a>
-              </p>
-              <p>
-                <strong>E-Mail:</strong><br />
-                <a href="mailto:kontakt@maierlehmann.de" class="underline">
-                  kontakt@maierlehmann.de
-                </a>
-              </p>
-              <p>
-                <strong>Telefon:</strong><br />
-                <span class="opacity-80">+49 (0) XXX / XXXXXXX</span>
-              </p>
-              <p>
-                <strong>Adresse:</strong><br />
-                <span class="opacity-80">Straße 123, 12345 Musterstadt</span>
-              </p>
-            </div>
-
-            <!-- Kontaktformular mit Bild-Hintergrund – Spacer-Lösung -->
-            <div
-              class="relative rounded-md overflow-hidden shadow-md flex"
-              style="
-                background-image: url('images/ML/IMG-20251129-WA0007.jpg');
-                background-size: cover;
-                background-position: center;
-              "
-            >
-              <!-- halbtransparenter Parchment-Layer -->
-              <div
-                class="absolute inset-0"
-                style="background-color: rgba(241, 221, 202, 0.6)"
-              ></div>
-
-              <form
-                class="relative p-20 space-y-3 text-gray-900 text-sm w-full flex flex-col"
-              >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  class="w-full form-field"
+                <img
+                  src="images/ML/board1.png"
+                  alt="Sideboard"
+                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
                 />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="E-Mail"
-                  class="w-full form-field"
-                />
-
-                <!-- Abstandhalter für Logo im Hintergrund -->
-                <div class="p-8"></div>
-
-                <div class="mt-10 sm:mt-16">
-                  <textarea
-                    name="message"
-                    rows="4"
-                    placeholder="Nachricht..."
-                    class="w-full form-field"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  class="w-full px-4 py-2 rounded text-white font-medium mt-2 btn-primary"
+                <figcaption
+                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
                 >
-                  Nachricht senden
-                </button>
-              </form>
+                  Sideboard · Front
+                </figcaption>
+              </figure>
+
+              <!-- Sideboard · Detail -->
+              <figure
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-1"
+              >
+                <img
+                  src="images/ML/board4.png"
+                  alt="Sideboard Detail"
+                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                />
+                <figcaption
+                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
+                >
+                  Sideboard · Detail
+                </figcaption>
+              </figure>
+
+              <!-- Pooldeck · Gesamt -->
+              <figure
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-1"
+              >
+                <img
+                  src="images/ML/pool1.png"
+                  alt="Pooldeck"
+                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                />
+                <figcaption
+                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
+                >
+                  Pooldeck · Gesamt
+                </figcaption>
+              </figure>
+
+              <!-- Pooldeck · Treppe -->
+              <figure
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-2"
+              >
+                <img
+                  src="images/ML/pool2.png"
+                  alt="Pooldeck Detail"
+                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                />
+                <figcaption
+                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
+                >
+                  Pooldeck · Treppe
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (Anker-Ziel für "Arbeiten") -->
     <footer
+      id="arbeiten-footer"
       class="text-[var(--parchment)] py-6 mt-6"
-      style="
-        background-image: url('images/ML/holz-background.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: rgba(66, 48, 59, 0.95);
-        background-blend-mode: multiply;
-      "
+      style="background-color: var(--grey)"
     >
       <div
         class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm"
@@ -741,7 +444,7 @@
           <span>© Tischlerei Maier & Lehmann</span>
         </div>
 
-        <div class="space-x-3 self-start sm:self-auto">
+        <div class="space-x-3 p-r-15 self-start sm:self-auto">
           <a href="impressum.html" class="underline">Impressum</a>
           <span>·</span>
           <a href="datenschutz.html" class="underline">Datenschutz</a>
@@ -752,20 +455,11 @@
     <!-- LIGHTBOX OVERLAY -->
     <div
       id="lightbox-overlay"
-      class="fixed inset-0 z-[60] flex items-center justify-center"
-      style="
-        background-image: url('images/ML/holz-background.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: rgba(0, 0, 0, 0.85);
-        background-blend-mode: multiply;
-      "
+      class="fixed inset-0 z-[60] flex items-center justify-center bg-black/80"
     >
-      <!-- Klickbare Fläche zum Schließen -->
       <div class="absolute inset-0"></div>
 
-      <div class="relative z-10 max-w-[90vw] max-h-[90vh] px-4">
+      <div class="relative z-10 max-w-[90vw] max-height-[90vh] px-4">
         <button
           id="lightbox-close"
           type="button"
@@ -787,12 +481,12 @@
     <button
       type="button"
       aria-label="Nach oben scrollen"
-      class="scroll-top-btn fixed bottom-5 right-5 z-40 rounded-full bg-[var(--leather)] text-[var(--parchment)] shadow-lg px-3 py-3 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 hover:shadow-xl hover:-translate-y-0.5"
+      class="scroll-top-btn fixed bottom-5 right-5 z-40 rounded-full btn-primary px-3 py-3 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 hover:shadow-xl hover:-translate-y-0.5"
     >
       ↑
     </button>
 
-    <!-- Scroll-Animations & Lightbox Script -->
+    <!-- JS (Animationen, Lightbox, Scroll-Top + zentrierte Anker) -->
     <script src="js/main.js"></script>
   </body>
 </html>

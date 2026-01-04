@@ -1,24 +1,27 @@
 /* Basis */
 html {
-  scroll-behavior: smooth;
+  /* Wir animieren Anker per JS, daher hier auto */
+  scroll-behavior: auto;
+  /* Scroll-Snap global aktiv */
+  scroll-snap-type: y mandatory;
+}
+
+/* Sektionen: min. Viewport-Höhe & Snap auf Mitte */
+.fullpage-section {
+  min-height: 100vh;
+  scroll-snap-align: center;
+}
+
+/* Footer soll am Seitenende „einrasten“ können */
+#arbeiten-footer {
+  scroll-snap-align: end;
 }
 
 body {
-  color: #111827; /* Tailwind gray-900 */
-
-  /* Grundfarbton – angelehnt an das helle Logo/Beige */
-  background-color: #d3c8b4; /* var(--beige) */
-
-  /* Maserung als Textur – WICHTIG: Pfad von css/styles.css aus gesehen! */
-  background-image: url("../images/ML/holz-background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-
-  /* sorgt für leichteren, „transparenten“ Effekt */
-  background-blend-mode: multiply;
+  background-color: #efdbc8; /* dein beige Grundton */
+  color: #444547; /* var(--grey) */
 }
+
 /* ============= ANIMATIONEN ============= */
 
 @keyframes fadein {
@@ -53,7 +56,6 @@ body {
 }
 
 /* Sobald .in-view per JS hinzugefügt wird → Animation läuft */
-
 .animate-fadein.in-view {
   animation: fadein 0.8s ease-out forwards;
 }
@@ -70,8 +72,7 @@ body {
   animation: fadeup 0.8s ease-out forwards;
 }
 
-/* Stufenweise Verzögerung für Projektkarten etc. */
-
+/* Stufenweise Verzögerung für Karten etc. */
 .delay-1.in-view {
   animation-delay: 0.2s !important;
 }
@@ -84,7 +85,7 @@ body {
   animation-delay: 0.5s !important;
 }
 
-/* ============= HOVER-EFFEKTE BILDER ============= */
+/* ============= HOVER-EFFEKTE BILDER / LOGO ============= */
 
 img.hover-zoom {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -96,14 +97,121 @@ img.hover-zoom:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Logos etwas „ruhiger“ skalieren */
-
 img.logo-zoom {
   transition: transform 0.3s ease;
 }
 
 img.logo-zoom:hover {
   transform: scale(1.04);
+}
+
+/* ============= PANELS / BUTTONS / FORM ============= */
+
+.section-panel {
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.section-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+}
+
+/* Buttons – neutral, Logo-Farben */
+.btn-primary {
+  background-color: #444547; /* var(--grey) */
+  color: #f1ddca; /* var(--parchment) */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.96;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid rgba(241, 221, 202, 0.9);
+  outline-offset: 2px;
+}
+
+/* Form-Felder */
+.form-field {
+  border-radius: 0.375rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.6rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease, transform 0.2s ease;
+}
+
+.form-field:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+}
+
+.form-field:focus {
+  outline: none;
+  border-color: #444547;
+  box-shadow: 0 0 0 2px rgba(68, 69, 71, 0.3), 0 10px 24px rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+}
+
+/* Stat-Kacheln (falls später genutzt) */
+.stat-box {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
+}
+
+/* Scroll-to-top Button */
+.scroll-top-btn {
+  /* Optik kommt über Utility-Klassen im HTML */
+}
+
+.scroll-top-btn-visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* ============= LIGHTBOX ============= */
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+#lightbox-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+#lightbox-overlay.lightbox-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 /* ============= ACCESSIBILITY ============= */
@@ -126,5 +234,13 @@ img.logo-zoom:hover {
     transition: none !important;
     transform: none !important;
     box-shadow: none !important;
+  }
+}
+
+/* Mobile-Spacing */
+@media (max-width: 640px) {
+  section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
