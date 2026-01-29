@@ -1,25 +1,27 @@
-/* Basis */
+/* Basis: Scroll-Snap + Grundlayout */
 html {
-  /* Wir animieren Anker per JS, daher hier auto */
+  /* wir animieren Anker per JS */
   scroll-behavior: auto;
-  /* Scroll-Snap global aktiv */
+  /* Fullpage-Snap */
   scroll-snap-type: y mandatory;
 }
 
-/* Sektionen: min. Viewport-Höhe & Snap auf Mitte */
+body {
+  background-color: #efdbc8; /* beige Grundton */
+  color: #444547; /* var(--grey) */
+}
+
+/* Jede „Seite“ / Sektion füllt mindestens den Viewport
+   und wird in der Mitte eingerastet */
 .fullpage-section {
   min-height: 100vh;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
 }
 
-/* Footer soll am Seitenende „einrasten“ können */
-#arbeiten-footer {
-  scroll-snap-align: end;
-}
-
-body {
-  background-color: #efdbc8; /* dein beige Grundton */
-  color: #444547; /* var(--grey) */
+/* Optional: Elemente, die NICHT snappen sollen (falls gebraucht) */
+.scroll-snap-ignore {
+  scroll-snap-align: none;
 }
 
 /* ============= ANIMATIONEN ============= */
@@ -118,7 +120,7 @@ img.logo-zoom:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
 }
 
-/* Buttons – neutral, Logo-Farben */
+/* Buttons – neutral in Logo-Farben */
 .btn-primary {
   background-color: #444547; /* var(--grey) */
   color: #f1ddca; /* var(--parchment) */
@@ -165,7 +167,7 @@ img.logo-zoom:hover {
   background-color: #ffffff;
 }
 
-/* Stat-Kacheln (falls später genutzt) */
+/* Stat-Kacheln (falls später wieder genutzt) */
 .stat-box {
   background-color: #ffffff;
   border-radius: 0.75rem;

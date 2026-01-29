@@ -67,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* === Scroll-to-top Button === */
-
-  const scrollTopBtn = document.querySelector(".scroll-top-btn");
+  /* === Smooth Scrolling Helper === */
 
   const smoothScrollTo = (targetY, duration = 900) => {
     const startY = window.pageYOffset;
@@ -95,21 +93,47 @@ document.addEventListener("DOMContentLoaded", () => {
     window.requestAnimationFrame(step);
   };
 
-  if (scrollTopBtn) {
-    window.addEventListener("scroll", () => {
+  /* === Scroll-to-top Button + dynamisches Scroll-Snap am Seitenende === */
+
+  const scrollTopBtn = document.querySelector(".scroll-top-btn");
+  const docEl = document.documentElement;
+
+  const handleScroll = () => {
+    // Scroll-to-top Sichtbarkeit
+    if (scrollTopBtn) {
       if (window.scrollY > 300) {
         scrollTopBtn.classList.add("scroll-top-btn-visible");
       } else {
         scrollTopBtn.classList.remove("scroll-top-btn-visible");
       }
-    });
+    }
 
+    // Scroll-Snap: am Seitenende deaktivieren, sonst aktiv
+    const scrollHeight = docEl.scrollHeight;
+    const viewportHeight =
+      window.innerHeight || docEl.clientHeight || document.body.clientHeight;
+    const distanceFromBottom =
+      scrollHeight - viewportHeight - window.pageYOffset;
+
+    if (distanceFromBottom < 200) {
+      // nahe Seitenende → Snap aus, damit Footer sichtbar bleibt
+      docEl.style.scrollSnapType = "none";
+    } else {
+      // normaler Bereich → Snap aktiv
+      docEl.style.scrollSnapType = "y mandatory";
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Initialzustand
+
+  if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => {
       smoothScrollTo(0, 900);
     });
   }
 
-  /* === Smooth-Scroll für interne Anker (Nav, Footer-Links etc.) === */
+  /* === Langsames Smooth-Scroll für interne Ankerlinks (Nav etc.) === */
 
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -124,20 +148,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
       e.preventDefault();
 
-      const viewportHeight = window.innerHeight;
-      let targetY;
+      const viewportHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
+
+      let targetY = 0;
 
       if (id === "arbeiten-footer") {
-        // Scroll ans Seitenende, damit der Footer komplett sichtbar ist
-        targetY = document.documentElement.scrollHeight - viewportHeight;
-        if (targetY < 0) targetY = 0;
+        // Für den letzten Menüpunkt: ganz ans Seitenende scrollen
+        const scrollHeight = docEl.scrollHeight;
+        targetY = scrollHeight - viewportHeight;
+
+        // Snap hier explizit ausschalten, damit wir nicht wieder hochschnappen
+        docEl.style.scrollSnapType = "none";
       } else {
-        // Sektion in der Mitte des Viewports platzieren
+        // Sektion auf die Mitte des Viewports ausrichten
         const rect = target.getBoundingClientRect();
         const elementTop = rect.top + window.pageYOffset;
         const elementHeight = rect.height;
-        const elementCenter = elementTop + elementHeight / 2;
-        targetY = elementCenter - viewportHeight / 2;
+        const centerOffset = Math.max((viewportHeight - elementHeight) / 2, 0);
+
+        targetY = elementTop - centerOffset;
         if (targetY < 0) targetY = 0;
       }
 

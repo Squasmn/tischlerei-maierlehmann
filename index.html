@@ -29,11 +29,11 @@
     </style>
   </head>
 
-  <body class="antialiased" style="background-color: #efdbc8">
+  <body class="antialiased scroll-smooth">
     <!-- HEADER -->
     <header
       class="fixed top-0 left-0 w-full z-50 text-[var(--parchment)] shadow-md"
-      style="background-color: rgba(68, 69, 71, 0.98)"
+      style="background-color: var(--grey)"
     >
       <div
         class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3"
@@ -50,12 +50,12 @@
           </span>
         </a>
 
-        <!-- Navigation (Kontakt, Leistungen, Über uns, Arbeiten->Footer) -->
+        <!-- Navigation -->
         <nav class="flex gap-5 text-sm">
           <a href="#kontakt" class="hover:underline">Kontakt</a>
           <a href="#leistungen" class="hover:underline">Leistungen</a>
           <a href="#ueber" class="hover:underline">Über uns</a>
-          <a href="#arbeiten-footer" class="hover:underline">Arbeiten</a>
+          <a href="#arbeiten-footer" class="hover:underline">Projekte</a>
         </nav>
       </div>
     </header>
@@ -68,7 +68,7 @@
         style="background-color: #efdbc8"
       >
         <div
-          class="px-6 py-8 md:py-12 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-16"
+          class="px-6 py-8 md:py-12 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-16"
         >
           <!-- Textblock -->
           <div
@@ -76,19 +76,19 @@
           >
             <h1
               class="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 leading-tight"
-              style="color: var(--mahagony)"
+              style="color: var(--grey)"
             >
-              Handwerk, klar und präzise.
+              Handwerk mit Charakter – klar und präzise.
             </h1>
             <p
               class="text-base sm:text-lg mb-4 max-w-xl mx-auto md:mx-0"
               style="color: rgba(68, 69, 71, 0.9)"
             >
-              Maßgefertigte Möbel und Holzlösungen – reduziert im Design, sauber
-              in der Ausführung, passend zu euren Räumen.
+              Maßgefertigte Möbel und individuelle Holzarbeiten – präzise
+              geplant, hochwertig umgesetzt und perfekt auf Ihre Räume
+              abgestimmt.
             </p>
 
-            <!-- Button: schmaler, zentriert unter dem Text -->
             <div class="mt-2 flex justify-center md:justify-start">
               <a
                 href="#kontakt"
@@ -102,12 +102,12 @@
           <!-- Großes Logo -->
           <div class="flex-1 max-w-md w-full relative animate-fadein-delay">
             <div
-              class="rounded-lg p-5 md:p-6 shadow-lg flex items-center justify-center"
-              style="background-color: rgba(68, 69, 71, 0.95)"
+              class="rounded-lg p-6 shadow-lg flex items-center justify-center"
+              style="background-color: var(--grey)"
             >
               <img
-                src="images/ML/IMG-20251129-WA0006.jpg"
-                alt="Tischlerei Maier & Lehmann Logo groß"
+                src="images/ML/logo-hero-square.png"
+                alt="Tischlerei Maier & Lehmann Logo"
                 class="w-full max-w-xs sm:max-w-sm h-auto object-contain logo-zoom"
               />
             </div>
@@ -115,15 +115,114 @@
         </div>
       </section>
 
-      <!-- KONTAKT (direkt unter Hero) -->
+      <!-- EINLEITUNG -->
+      <section
+        id="einleitung"
+        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div
+            class="section-panel px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
+            style="background-color: var(--grey)"
+          >
+            <h2
+              class="text-2xl sm:text-3xl font-serif mb-5 text-center"
+              style="color: var(--parchment)"
+            >
+              Möbel nach Maß
+            </h2>
+            <p
+              class="text-sm sm:text-base leading-relaxed max-w-3xl mx-auto text-center"
+              style="color: var(--parchment)"
+            >
+              Wir fertigen Möbel nach Maß – für Menschen, die Wert auf Qualität,
+              ehrliches Handwerk und durchdachte Lösungen legen. Ob Einzelstück
+              oder kompletter Ausbau eines Bereichs: Jedes Projekt entsteht in
+              enger Abstimmung und wird mit handwerklicher Präzision umgesetzt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LEISTUNGEN -->
+      <section
+        id="leistungen"
+        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
+      >
+        <div class="max-w-5xl mx-auto w-full">
+          <div
+            class="section-panel px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
+            style="background-color: var(--grey)"
+          >
+            <h2
+              class="text-2xl sm:text-3xl font-serif mb-6 text-center"
+              style="color: var(--parchment)"
+            >
+              Leistungen
+            </h2>
+
+            <p
+              class="text-sm sm:text-base text-center max-w-2xl mx-auto mb-10"
+              style="color: var(--parchment)"
+            >
+              Wir planen, fertigen und montieren individuelle Holzlösungen – vom
+              Einzelstück bis zur komplett eingerichteten Fläche.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-6 text-sm">
+              <div class="bg-white rounded-lg p-5 shadow-sm animate-up">
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Möbelbau nach Maß
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Individuelle Möbelstücke für Wohn-, Schlaf- und Arbeitsräume –
+                  geplant nach Maß, gefertigt mit hochwertigen Materialien.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-5 shadow-sm animate-up">
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Innenausbau &amp; Einbauten
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Passgenaue Lösungen für Nischen, Dachschrägen, Ankleiden und
+                  komplette Raumkonzepte.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-5 shadow-sm animate-up">
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Praxen &amp; Arbeitsräume
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Funktionale und langlebige Möbel, die Arbeitsabläufe
+                  unterstützen und professionell wirken.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-lg p-5 shadow-sm animate-up">
+                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
+                  Gastronomie &amp; Tresenbau
+                </h3>
+                <p class="text-[var(--grey)]/90">
+                  Robuste, hochwertige Lösungen für Restaurants, Bars und Cafés
+                  – funktional und ästhetisch zugleich.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
       <section
         id="kontakt"
         class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
       >
         <div class="max-w-5xl mx-auto w-full">
           <div
-            class="px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 section-panel animate-up"
-            style="background-color: var(--grey)"
+            class="section-panel px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
+            style="background-color: #444547"
           >
             <h2
               class="text-2xl sm:text-3xl font-serif mb-6 animate-up"
@@ -133,22 +232,10 @@
             </h2>
 
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center animate-up-delay"
+              class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center animate-up-delay"
             >
               <!-- Kontaktdaten -->
-              <div
-                class="space-y-5 sm:space-y-6 text-sm flex flex-col justify-center"
-              >
-                <p style="color: rgba(241, 221, 202, 0.9)">
-                  <strong>Website:</strong><br />
-                  <a
-                    href="https://tischlerei-maierlehmann.de"
-                    class="underline"
-                    style="color: var(--parchment)"
-                  >
-                    tischlerei-maierlehmann.de
-                  </a>
-                </p>
+              <div class="space-y-6 text-sm flex flex-col justify-center">
                 <p style="color: rgba(241, 221, 202, 0.9)">
                   <strong>E-Mail:</strong><br />
                   <a
@@ -161,17 +248,22 @@
                 </p>
                 <p style="color: rgba(241, 221, 202, 0.9)">
                   <strong>Telefon:</strong><br />
-                  <span class="opacity-80">+49 (0) XXX / XXXXXXX</span>
+                  <span class="opacity-80 block"
+                    >Nick Lehmann: 0174&nbsp;8888300</span
+                  >
+                  <span class="opacity-80 block"
+                    >Moritz Maier: 0174&nbsp;8888307</span
+                  >
                 </p>
                 <p style="color: rgba(241, 221, 202, 0.9)">
                   <strong>Adresse:</strong><br />
-                  <span class="opacity-80">Straße 123, 12345 Musterstadt</span>
+                  <span class="opacity-80">Höherweg 333, 40231 Düsseldorf</span>
                 </p>
               </div>
 
               <!-- Kontaktformular -->
               <div
-                class="relative rounded-md overflow-hidden shadow-md bg-white/95"
+                class="relative rounded-md overflow-hidden shadow-md bg-white"
               >
                 <form
                   class="relative p-6 sm:p-8 space-y-3 text-gray-900 text-sm w-full flex flex-col"
@@ -208,80 +300,6 @@
         </div>
       </section>
 
-      <!-- LEISTUNGEN -->
-      <section
-        id="leistungen"
-        class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
-      >
-        <div class="max-w-5xl mx-auto w-full">
-          <div
-            class="section-panel px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
-            style="background-color: var(--grey)"
-          >
-            <h2
-              class="text-2xl sm:text-3xl font-serif mb-6 text-center"
-              style="color: var(--parchment)"
-            >
-              Leistungen
-            </h2>
-
-            <p
-              class="text-sm sm:text-base text-center max-w-2xl mx-auto mb-8 sm:mb-10"
-              style="color: rgba(241, 221, 202, 0.9)"
-            >
-              Wir planen, fertigen und montieren individuelle Holzlösungen – vom
-              Einzelstück bis zur komplett eingerichteten Fläche.
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 text-sm">
-              <div
-                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
-              >
-                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
-                  Möbelbau & Einbauten
-                </h3>
-                <p class="text-[var(--grey)]/90">
-                  Schränke, Sideboards, Regale und Einbauten nach Maß.
-                </p>
-              </div>
-
-              <div
-                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
-              >
-                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
-                  Praxen & Arbeitsräume
-                </h3>
-                <p class="text-[var(--grey)]/90">
-                  Holzlösungen für funktionale, ruhige Arbeitsumgebungen.
-                </p>
-              </div>
-
-              <div
-                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
-              >
-                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
-                  Gastronomie & Tresen
-                </h3>
-                <p class="text-[var(--grey)]/90">
-                  Theken und Möblierung für Cafés, Bars oder Restaurants.
-                </p>
-              </div>
-
-              <div
-                class="bg-white/95 rounded-lg p-4 sm:p-5 shadow-sm animate-up"
-              >
-                <h3 class="text-base font-semibold mb-1" style="color: #42303b">
-                  Präsentation & Schaufenster
-                </h3>
-                <p class="text-[var(--grey)]/90">
-                  Präsentationsmöbel und Details für starke Auftritte.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- ÜBER UNS -->
       <section
         id="ueber"
@@ -289,10 +307,10 @@
       >
         <div class="max-w-5xl mx-auto w-full">
           <div
-            class="overflow-hidden section-panel animate-up"
-            style="background-color: var(--grey)"
+            class="section-panel overflow-hidden animate-up"
+            style="background-color: #444547"
           >
-            <div class="px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12">
+            <div class="px-6 sm:px-8 py-10 sm:py-12">
               <div class="mb-6 flex justify-start animate-fadein-delay">
                 <img
                   src="images/ML/IMG-20251129-WA00009.jpg"
@@ -302,69 +320,84 @@
               </div>
 
               <h2
-                class="text-2xl sm:text-3xl font-serif mb-5 animate-up"
+                class="text-2xl sm:text-3xl font-serif mb-3 animate-up"
                 style="color: var(--parchment)"
               >
                 Über uns
               </h2>
 
+              <h3
+                class="text-sm sm:text-base font-semibold mb-4 animate-up"
+                style="color: rgba(241, 221, 202, 0.95)"
+              >
+                Zwei Tischler. Eine Haltung.
+              </h3>
+
               <p
-                class="mb-6 leading-relaxed animate-up-delay max-w-3xl text-sm sm:text-base"
+                class="mb-4 leading-relaxed animate-up-delay max-w-3xl text-sm sm:text-base"
                 style="color: rgba(241, 221, 202, 0.9)"
               >
-                Wir sind zwei Tischler mit zusammen über 20 Jahren Erfahrung im
-                Möbel- und Innenausbau. Unser Fokus liegt auf klaren Formen,
-                sauberen Details und robusten Lösungen, die sich im Alltag
-                bewähren.
+                Wir sind Maier &amp; Lehmann – zwei Tischler mit über
+                20&nbsp;Jahren Berufserfahrung und der gemeinsamen Leidenschaft
+                für ehrliches Handwerk.
               </p>
 
-              <ul
-                class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm animate-up-delay"
+              <p
+                class="mb-4 leading-relaxed animate-up-delay max-w-3xl text-sm sm:text-base"
                 style="color: rgba(241, 221, 202, 0.9)"
               >
-                <li>✔ Maßgefertigte Möbel & Einbauten</li>
-                <li>✔ Holzprojekte für Wohn- & Arbeitsbereiche</li>
-                <li>✔ Präzise Ausführung vom Entwurf bis zur Montage</li>
-                <li>✔ Direkte Abstimmung und kurze Wege</li>
-              </ul>
+                Für uns ist jedes Projekt ein Unikat. Wir hören zu, denken mit
+                und entwickeln Lösungen, die nicht nur gut aussehen, sondern im
+                Alltag funktionieren.
+              </p>
+
+              <p
+                class="leading-relaxed animate-up-delay max-w-3xl text-sm sm:text-base"
+                style="color: rgba(241, 221, 202, 0.9)"
+              >
+                Von der ersten Idee bis zur Montage legen wir Wert auf klare
+                Absprachen, saubere Arbeit und zuverlässige Umsetzung.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ARBEITEN – Bildgalerie -->
+      <!-- PROJEKTE – Bildgalerie -->
       <section
         id="arbeiten"
         class="fullpage-section flex items-center px-4 py-12 md:py-16 lg:py-20"
       >
         <div class="max-w-5xl mx-auto w-full">
           <div
-            class="px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 section-panel animate-up"
-            style="background-color: var(--grey)"
+            class="section-panel px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
+            style="background-color: #444547"
           >
             <h2
               class="text-2xl sm:text-3xl font-serif mb-5 animate-up"
               style="color: var(--parchment)"
             >
-              Arbeiten
+              Projekte
             </h2>
 
             <p
               class="text-sm mb-6 sm:mb-8"
               style="color: rgba(241, 221, 202, 0.9)"
             >
-              Auswahl realisierter Projekte. Ein Klick öffnet das Bild größer.
+              Eine kleine Auswahl unserer bisherigen Arbeiten – individuell
+              geplant und handwerklich umgesetzt. Ein Klick öffnet das Bild
+              größer.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              <!-- Sideboard · Front -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Sideboard-Bilder -->
               <figure
                 class="bg-white rounded-lg overflow-hidden shadow-sm animate-up"
               >
                 <img
                   src="images/ML/board1.png"
                   alt="Sideboard"
-                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
                 />
                 <figcaption
                   class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
@@ -373,14 +406,13 @@
                 </figcaption>
               </figure>
 
-              <!-- Sideboard · Detail -->
               <figure
                 class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-1"
               >
                 <img
                   src="images/ML/board4.png"
                   alt="Sideboard Detail"
-                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
                 />
                 <figcaption
                   class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
@@ -389,14 +421,14 @@
                 </figcaption>
               </figure>
 
-              <!-- Pooldeck · Gesamt -->
+              <!-- Pool-Bilder -->
               <figure
-                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-1"
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-2"
               >
                 <img
                   src="images/ML/pool1.png"
                   alt="Pooldeck"
-                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
                 />
                 <figcaption
                   class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
@@ -405,30 +437,31 @@
                 </figcaption>
               </figure>
 
-              <!-- Pooldeck · Treppe -->
               <figure
-                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-2"
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-3"
               >
                 <img
-                  src="images/ML/pool2.png"
+                  src="images/ML/pool3.png"
                   alt="Pooldeck Detail"
-                  class="w-full h-40 sm:h-48 object-cover hover-zoom lightbox-trigger"
+                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
                 />
                 <figcaption
                   class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
                 >
-                  Pooldeck · Treppe
+                  Pooldeck · Detail
                 </figcaption>
               </figure>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- unsichtbarer Anker unten, damit der letzte Menüpunkt ganz runterscrollt -->
+      <div id="arbeiten-footer" class="h-px scroll-snap-ignore"></div>
     </main>
 
-    <!-- FOOTER (Anker-Ziel für "Arbeiten") -->
+    <!-- FOOTER -->
     <footer
-      id="arbeiten-footer"
       class="text-[var(--parchment)] py-6 mt-6"
       style="background-color: var(--grey)"
     >
@@ -444,7 +477,7 @@
           <span>© Tischlerei Maier & Lehmann</span>
         </div>
 
-        <div class="space-x-3 p-r-15 self-start sm:self-auto">
+        <div class="space-x-3 self-start sm:self-auto">
           <a href="impressum.html" class="underline">Impressum</a>
           <span>·</span>
           <a href="datenschutz.html" class="underline">Datenschutz</a>
@@ -459,7 +492,7 @@
     >
       <div class="absolute inset-0"></div>
 
-      <div class="relative z-10 max-w-[90vw] max-height-[90vh] px-4">
+      <div class="relative z-10 max-w-[90vw] max-h-[90vh] px-4">
         <button
           id="lightbox-close"
           type="button"
@@ -486,7 +519,7 @@
       ↑
     </button>
 
-    <!-- JS (Animationen, Lightbox, Scroll-Top + zentrierte Anker) -->
+    <!-- JS -->
     <script src="js/main.js"></script>
   </body>
 </html>
