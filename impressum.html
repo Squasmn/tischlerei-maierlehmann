@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Impressum – Tischlerei Maier & Lehmann</title>
+    <title>Impressum – Tischlerei Maier &amp; Lehmann</title>
     <meta
       name="description"
       content="Impressum der Tischlerei Maier & Lehmann."
@@ -13,9 +13,10 @@
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Styles (Animationen etc.) -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css" />
 
+    <!-- Farb-Variablen wie in index.html -->
     <style>
       :root {
         --mahagony: #42303b;
@@ -25,36 +26,14 @@
         --grey: #444547;
         --beige: #d3c8b4;
       }
-
-      .section-panel {
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-      }
-
-      a {
-        text-decoration: underline;
-      }
     </style>
   </head>
 
-  <body
-    class="text-[var(--parchment)] antialiased scroll-smooth"
-    style="
-      background-color: #d3c8b4;
-      background-image: linear-gradient(
-          rgba(211, 200, 180, 0.8),
-          rgba(211, 200, 180, 0.8)
-        ),
-        url('images/ML/holz-background.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-    "
-  >
-    <!-- HEADER -->
+  <body class="antialiased" style="background-color: #efdbc8">
+    <!-- HEADER – wie Startseite -->
     <header
-      class="fixed top-0 left-0 w-full z-50 bg-[var(--grey)]/95 text-[var(--parchment)] shadow-md"
+      class="fixed top-0 left-0 w-full z-50 text-[var(--parchment)] shadow-md"
+      style="background-color: rgba(68, 69, 71, 0.98)"
     >
       <div
         class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3"
@@ -70,79 +49,97 @@
           </span>
         </a>
 
-        <!-- Navigation zurück zur Startseite -->
         <nav class="flex gap-5 text-sm">
-          <a href="index.html#ueber" class="hover:underline">Über uns</a>
-          <a href="index.html#arbeiten" class="hover:underline">Arbeiten</a>
           <a href="index.html#kontakt" class="hover:underline">Kontakt</a>
+          <a href="index.html#leistungen" class="hover:underline">Leistungen</a>
+          <a href="index.html#ueber" class="hover:underline">Über uns</a>
+          <a href="index.html#arbeiten-footer" class="hover:underline"
+            >Arbeiten</a
+          >
         </nav>
       </div>
     </header>
 
     <!-- MAIN -->
     <main class="pt-24 pb-16 px-4">
-      <section class="max-w-6xl mx-auto">
+      <section class="max-w-5xl mx-auto">
         <div
-          class="section-panel bg-[rgba(66,48,59,0.6)] px-6 sm:px-8 py-10 sm:py-12"
+          class="section-panel px-6 sm:px-8 py-10 sm:py-12 bg-white/95 text-[var(--grey)]"
         >
           <h1
-            class="text-2xl sm:text-3xl font-serif mb-6 text-[var(--parchment)]"
+            class="text-2xl sm:text-3xl font-serif mb-6"
+            style="color: var(--mahagony)"
           >
             Impressum
           </h1>
 
-          <p class="text-xs mb-6 text-[var(--parchment)]/80">
+          <p class="text-xs mb-6 text-[var(--grey)]/80">
             Hinweis: Diese Vorlage ersetzt keine rechtliche Beratung. Die
-            Angaben müssen von einer fachkundigen Person (z. B. Rechtsanwalt /
-            Steuerberater) geprüft und an das konkrete Unternehmen angepasst
-            werden.
+            Angaben sollten von einer fachkundigen Person (z.&nbsp;B.
+            Rechtsanwalt / Steuerberater) geprüft und an das konkrete
+            Unternehmen angepasst werden.
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">Angaben gemäß § 5 TMG</h2>
+          <!-- § 5 TMG -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
+            Angaben gemäß § 5 TMG
+          </h2>
           <p class="mb-4 text-sm leading-relaxed">
-            <strong>Tischlerei Maier &amp; Lehmann</strong><br />
-            <!-- Firmierung ggf. anpassen, z. B. GbR, e.K., GmbH etc. -->
-            Inhaber: <span class="opacity-80">[Vorname Nachname Maier]</span>
-            und
-            <span class="opacity-80">[Vorname Nachname Lehmann]</span><br />
-            Straße / Hausnummer<br />
-            PLZ Ort<br />
+            <strong>Maier &amp; Lehmann GmbH i. G.</strong><br />
+            Höherweg 333<br />
+            40231 Düsseldorf<br />
             Deutschland
           </p>
-
-          <h2 class="font-semibold mt-4 mb-2">Kontakt</h2>
           <p class="mb-4 text-sm leading-relaxed">
-            Telefon:
-            <span class="opacity-80">+49 (0) XXX / XXXXXXX</span><br />
+            Vertreten durch die Geschäftsführer:<br />
+            <span class="opacity-80">Moritz Maier</span> und
+            <span class="opacity-80">Nick Lehmann</span>
+          </p>
+
+          <!-- Kontakt -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">Kontakt</h2>
+          <p class="mb-4 text-sm leading-relaxed">
+            Telefon (Nick Lehmann):
+            <span class="opacity-80">+49 (0) 174&nbsp;8888300</span><br />
+            Telefon (Moritz Maier):
+            <span class="opacity-80">+49 (0) 174&nbsp;8888307</span><br />
             E-Mail:
-            <a href="mailto:kontakt@maierlehmann.de">kontakt@maierlehmann.de</a
+            <a href="mailto:kontakt@maierlehmann.de" class="underline"
+              >kontakt@maierlehmann.de</a
             ><br />
             Website:
-            <a href="https://tischlerei-maierlehmann.de"
+            <a
+              href="https://tischlerei-maierlehmann.de"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer"
               >tischlerei-maierlehmann.de</a
             >
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">Umsatzsteuer-ID</h2>
+          <!-- USt-ID -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
+            Umsatzsteuer-ID
+          </h2>
           <p class="mb-4 text-sm leading-relaxed">
             Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-            <span class="opacity-80">[USt-IdNr. eintragen]</span><br />
-            Falls keine vorhanden ist, diesen Abschnitt entsprechend anpassen
-            oder entfernen.
+            <span class="opacity-80">wird nachgetragen, sobald vorhanden.</span>
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">
+          <!-- Kammer / Handwerksrolle -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
             Zuständige Kammer / Handwerksrolle
           </h2>
           <p class="mb-4 text-sm leading-relaxed">
-            Eingetragen in der Handwerksrolle:<br />
+            Eingetragen in der Handwerksrolle der:<br />
+            <span class="opacity-80">Handwerkskammer Düsseldorf</span><br />
             <span class="opacity-80"
-              >[Name der zuständigen Handwerkskammer]</span
-            ><br />
-            <span class="opacity-80">[Anschrift der Handwerkskammer]</span>
+              >Georg-Schulhoff-Platz 1, 40221 Düsseldorf</span
+            >
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">
+          <!-- Berufsrecht -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
             Berufsbezeichnung und berufsrechtliche Regelungen
           </h2>
           <p class="mb-4 text-sm leading-relaxed">
@@ -151,10 +148,13 @@
             Verliehen in:
             <span class="opacity-80">Deutschland</span><br />
             Es gelten insbesondere die Bestimmungen der Handwerksordnung (HwO)
-            und die Vorschriften der jeweils zuständigen Handwerkskammer.
+            sowie die Vorschriften der zuständigen Handwerkskammer Düsseldorf.
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">Haftung für Inhalte</h2>
+          <!-- Haftung Inhalte -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
+            Haftung für Inhalte
+          </h2>
           <p class="mb-4 text-sm leading-relaxed">
             Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für
             die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können
@@ -166,22 +166,28 @@
             Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">Haftung für Links</h2>
+          <!-- Haftung Links -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
+            Haftung für Links
+          </h2>
           <p class="mb-4 text-sm leading-relaxed">
-            Unser Angebot enthält möglicherweise Links zu externen Websites
-            Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können
-            wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
-            Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
+            Unser Angebot kann Links zu externen Websites Dritter enthalten, auf
+            deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
+            diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte
+            der verlinkten Seiten ist stets der jeweilige Anbieter oder
             Betreiber der Seiten verantwortlich. Zum Zeitpunkt der Verlinkung
             wurden die Seiten auf mögliche Rechtsverstöße überprüft;
-            rechtswidrige Inhalte waren dabei nicht erkennbar. Eine dauerhafte
-            inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete
-            Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+            rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar.
+            Eine dauerhafte inhaltliche Kontrolle der verlinkten Seiten ist ohne
+            konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
             Bekanntwerden von Rechtsverletzungen werden wir derartige Links
             umgehend entfernen.
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">Urheberrecht</h2>
+          <!-- Urheberrecht -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
+            Urheberrecht
+          </h2>
           <p class="mb-4 text-sm leading-relaxed">
             Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
             diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge
@@ -193,7 +199,8 @@
             sofern nicht ausdrücklich anders angegeben.
           </p>
 
-          <h2 class="font-semibold mt-4 mb-2">
+          <!-- Online-Streitbeilegung -->
+          <h2 class="font-semibold mt-4 mb-2 text-sm sm:text-base">
             Online-Streitbeilegung / Verbraucherstreitbeilegung
           </h2>
           <p class="mb-4 text-sm leading-relaxed">
@@ -211,8 +218,11 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-[var(--mahagony)] text-[var(--parchment)] py-6 mt-6">
+    <!-- FOOTER – wie Startseite -->
+    <footer
+      class="text-[var(--parchment)] py-6 mt-6"
+      style="background-color: var(--grey)"
+    >
       <div
         class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm"
       >
@@ -222,7 +232,7 @@
             alt="Maier & Lehmann Logo"
             class="h-10 w-auto object-contain logo-zoom"
           />
-          <span>© Tischlerei Maier & Lehmann</span>
+          <span>© Maier &amp; Lehmann GmbH i. G.</span>
         </div>
 
         <div class="space-x-3 self-start sm:self-auto">
