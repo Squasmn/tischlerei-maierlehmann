@@ -1,27 +1,23 @@
-/* Basis: Scroll-Snap + Grundlayout */
+/* Basis */
 html {
-  /* wir animieren Anker per JS */
-  scroll-behavior: auto;
-  /* Fullpage-Snap */
+  scroll-behavior: smooth;
+  /* Fullpage-Scroll-Snap */
   scroll-snap-type: y mandatory;
 }
 
-body {
-  background-color: #efdbc8; /* beige Grundton */
-  color: #444547; /* var(--grey) */
-}
-
-/* Jede „Seite“ / Sektion füllt mindestens den Viewport
-   und wird in der Mitte eingerastet */
+/* Jede Sektion soll „einrasten“ und mind. viewport-hoch sein */
 .fullpage-section {
-  min-height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   scroll-snap-stop: always;
+  min-height: 100vh;
+  scroll-margin-top: 4.5rem; /* Platz für den fixen Header */
 }
 
-/* Optional: Elemente, die NICHT snappen sollen (falls gebraucht) */
-.scroll-snap-ignore {
-  scroll-snap-align: none;
+body {
+  background-color: #efdbc8;
+  color: #444547; /* var(--grey) */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 }
 
 /* ============= ANIMATIONEN ============= */
@@ -120,28 +116,117 @@ img.logo-zoom:hover {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
 }
 
-/* Buttons – neutral in Logo-Farben */
+/* ============= TEXTUR AUF DUNKLEN FLÄCHEN ============= */
+
+:root {
+  /*
+    Feinjustierung:
+    - --panel-overlay höher => dunkler und ruhiger
+    - --panel-tint wärmer/kälter => Farbcharakter
+    - --pattern-opacity niedriger => subtiler
+  */
+  --panel-overlay: 0.5; /* 0..1 */
+  --panel-tint: 24, 18, 14; /* warmes dunkel */
+  --pattern-size: 260px;
+
+  /* Optional: Pattern zusätzlich transparenter machen */
+  --pattern-opacity: 0.85; /* 0..1 */
+}
+
+/* Dark Panel bekommt IMMER eine Basisfarbe + Texture-Layer */
+.section-panel-dark {
+  background-color: var(--grey);
+
+  /* Layer 1: Overlay / Tönung
+     Layer 2: Pattern
+  */
+  background-image: linear-gradient(
+      rgba(var(--panel-tint), var(--panel-overlay)),
+      rgba(var(--panel-tint), var(--panel-overlay))
+    ),
+    url("../images/ML/greyness.png");
+
+  background-repeat: repeat, repeat;
+  background-size: auto, var(--pattern-size) var(--pattern-size);
+  background-position: 0 0, 0 0;
+
+  /* Hilft, dass die Textur trotz Overlay sichtbar bleibt */
+  background-blend-mode: multiply, normal;
+}
+
+/* Falls du das Pattern noch subtiler machen willst (optional):
+   => statt Blend-Mode kannst du auch das Pattern dämpfen via pseudo-element.
+   Ich lasse es hier bewusst simpel & robust. */
+
+/* Optional für Header / Footer, falls dort auch die Textur sein soll */
+.bg-textured-dark {
+  background-color: var(--grey);
+  background-image: url("../images/ML/greyness.png");
+  background-repeat: repeat;
+  background-size: 260px 260px;
+}
+
+/* Buttons Navigation */
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(241, 221, 202, 0.35);
+  background-color: rgba(241, 221, 202, 0.06);
+  color: #f1ddca; /* var(--parchment) */
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-nav:hover {
+  background-color: rgba(241, 221, 202, 0.18);
+  border-color: rgba(241, 221, 202, 0.65);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-nav:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+}
+
+.btn-nav:focus-visible {
+  outline: 2px solid rgba(241, 221, 202, 0.95);
+  outline-offset: 2px;
+}
+
+/* Buttons CTA / Form – Elevated Style im CI */
 .btn-primary {
   background-color: #444547; /* var(--grey) */
   color: #f1ddca; /* var(--parchment) */
+  border-radius: 0.375rem;
+  border: 1px solid rgba(0, 0, 0, 0.22);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  font-weight: 500;
   transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease, opacity 0.2s ease;
+    box-shadow 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary:hover {
-  opacity: 0.96;
+  opacity: 0.97;
+  background-color: #3b3c3d;
+  border-color: rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
 }
 
 .btn-primary:active {
   transform: translateY(0);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
 .btn-primary:focus-visible {
-  outline: 2px solid rgba(241, 221, 202, 0.9);
+  outline: 2px solid rgba(241, 221, 202, 0.95);
   outline-offset: 2px;
 }
 
@@ -167,24 +252,9 @@ img.logo-zoom:hover {
   background-color: #ffffff;
 }
 
-/* Stat-Kacheln (falls später wieder genutzt) */
-.stat-box {
-  background-color: #ffffff;
-  border-radius: 0.75rem;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
-}
-
 /* Scroll-to-top Button */
 .scroll-top-btn {
-  /* Optik kommt über Utility-Klassen im HTML */
+  /* Styling über Utility-Klassen im HTML */
 }
 
 .scroll-top-btn-visible {

@@ -19,9 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
     animatedElements.forEach((el) => observer.observe(el));
@@ -49,17 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     lightboxTriggers.forEach((img) => {
-      img.addEventListener("click", () => {
-        openLightbox(img.src, img.alt);
-      });
+      img.addEventListener("click", () => openLightbox(img.src, img.alt));
     });
 
     lightboxClose.addEventListener("click", closeLightbox);
 
+    // Robust: Klick auf "dunklen Hintergrund" soll schließen
     lightboxOverlay.addEventListener("click", (e) => {
-      if (e.target === lightboxOverlay) {
-        closeLightbox();
-      }
+      // Wenn nicht auf dem Bild/Container geklickt wird -> schließen
+      const clickedInsideContent = e.target.closest(
+        "#lightbox-image, #lightbox-close"
+      );
+      if (!clickedInsideContent) closeLightbox();
     });
 
     document.addEventListener("keydown", (e) => {
@@ -85,9 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const eased = 0.5 * (1 - Math.cos(Math.PI * progress));
       window.scrollTo(0, startY + distance * eased);
 
-      if (time < duration) {
-        window.requestAnimationFrame(step);
-      }
+      if (time < duration) window.requestAnimationFrame(step);
     };
 
     window.requestAnimationFrame(step);
@@ -128,9 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   handleScroll(); // Initialzustand
 
   if (scrollTopBtn) {
-    scrollTopBtn.addEventListener("click", () => {
-      smoothScrollTo(0, 900);
-    });
+    scrollTopBtn.addEventListener("click", () => smoothScrollTo(0, 900));
   }
 
   /* === Langsames Smooth-Scroll für interne Ankerlinks (Nav etc.) === */
