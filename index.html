@@ -55,10 +55,11 @@
 
         <!-- Navigation -->
         <nav class="flex gap-3 text-sm">
-          <a href="#kontakt" class="btn-nav">Kontakt</a>
           <a href="#leistungen" class="btn-nav">Leistungen</a>
+          <a href="#kontakt" class="btn-nav">Kontakt</a>
+
           <a href="#ueber" class="btn-nav">Über uns</a>
-          <a href="#arbeiten-footer" class="btn-nav">Arbeiten</a>
+          <a href="#arbeiten-footer" class="btn-nav">Projekte</a>
         </nav>
       </div>
     </header>
@@ -75,11 +76,13 @@
             class="section-panel section-panel-dark px-6 sm:px-10 py-10 sm:py-12 flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-16 animate-fadein"
           >
             <!-- Großes Logo -->
-            <div class="flex-1 max-w-md w-full relative animate-fadein-delay">
+            <div
+              class="flex-1 max-w-md w-full relative animate-fadein-delay flex justify-center"
+            >
               <img
                 src="images/ML/logo-neu.png"
                 alt="Tischlerei Maier & Lehmann Logo"
-                class="w-full rounded-md max-w-xs sm:max-w-sm h-auto object-contain logo-zoom"
+                class="w-full rounded-md max-w-xs sm:max-w-sm h-auto object-contain logo-zoom mx-auto"
               />
             </div>
 
@@ -241,7 +244,7 @@
                     class="underline"
                     style="color: var(--parchment)"
                   >
-                    kontakt@maierlehmann.de
+                    kontakt@tischlerei-maierlehmann.de
                   </a>
                 </p>
                 <p style="color: rgba(241, 221, 202, 0.9)">
@@ -336,20 +339,19 @@
             class="section-panel section-panel-dark px-5 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 animate-up"
           >
             <div class="px-6 sm:px-8 py-10 sm:py-12">
-              <div class="mb-6 flex justify-end animate-fadein-delay">
-                <img
-                  src="images/ML/IMG-20251129-WA00009.jpg"
-                  alt="Maier & Lehmann Logo Variante"
-                  class="h-20 sm:h-24 w-auto object-contain logo-zoom"
-                />
-              </div>
-
               <h2
                 class="text-2xl sm:text-3xl font-serif mb-3 animate-up"
                 style="color: var(--parchment)"
               >
                 Über uns
               </h2>
+              <div class="mb-6 flex animate-fadein-delay">
+                <img
+                  src="images/ML/IMG-20251129-WA00009.jpg"
+                  alt="Maier & Lehmann Logo Variante"
+                  class="h-300 sm:h-240 w-auto object-contain justify-center logo-zoom"
+                />
+              </div>
 
               <h3
                 class="text-sm sm:text-base font-semibold mb-4 animate-up"
@@ -414,50 +416,19 @@
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Sideboard-Bilder -->
+              <!-- Küche 1 Bilder -->
               <figure
                 class="bg-white rounded-lg overflow-hidden shadow-sm animate-up"
               >
                 <img
-                  src="images/ML/board1.png"
-                  alt="Sideboard"
+                  src="images/ML/küche2.png"
+                  alt="Küche"
                   class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
                 />
                 <figcaption
                   class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
                 >
-                  Sideboard · Front
-                </figcaption>
-              </figure>
-
-              <figure
-                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-1"
-              >
-                <img
-                  src="images/ML/board4.png"
-                  alt="Sideboard Detail"
-                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
-                />
-                <figcaption
-                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
-                >
-                  Sideboard · Detail
-                </figcaption>
-              </figure>
-
-              <!-- Pool-Bilder -->
-              <figure
-                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-2"
-              >
-                <img
-                  src="images/ML/pool1.png"
-                  alt="Pooldeck"
-                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
-                />
-                <figcaption
-                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
-                >
-                  Pooldeck · Gesamt
+                  Küche · Front
                 </figcaption>
               </figure>
 
@@ -465,14 +436,44 @@
                 class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-3"
               >
                 <img
-                  src="images/ML/pool3.png"
-                  alt="Pooldeck Detail"
+                  src="images/ML/wohnfront.png"
+                  alt="wohnzimmer"
                   class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
                 />
                 <figcaption
                   class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
                 >
-                  Pooldeck · Detail
+                  Wohnfront · Detail
+                </figcaption>
+              </figure>
+
+              <!-- sideboard -->
+              <figure
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-2"
+              >
+                <img
+                  src="images/ML/sideboard.png"
+                  alt="sideboard"
+                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
+                />
+                <figcaption
+                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
+                >
+                  Sideboard Werkstück · Detail
+                </figcaption>
+              </figure>
+              <figure
+                class="bg-white rounded-lg overflow-hidden shadow-sm animate-up delay-1"
+              >
+                <img
+                  src="images/ML/pool.png"
+                  alt="Pool"
+                  class="w-full h-48 sm:h-56 md:h-52 object-cover hover-zoom lightbox-trigger"
+                />
+                <figcaption
+                  class="px-4 py-2 text-xs sm:text-sm text-[var(--grey)] bg-white/95"
+                >
+                  Pool · Verkleidung + Treppe
                 </figcaption>
               </figure>
             </div>
