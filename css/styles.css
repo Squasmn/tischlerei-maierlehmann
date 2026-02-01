@@ -5,7 +5,7 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-/* Jede Sektion soll „einrasten“ und mind. viewport-hoch sein */
+/* scroll snap für sections*/
 .fullpage-section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
