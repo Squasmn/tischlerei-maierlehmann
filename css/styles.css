@@ -252,6 +252,29 @@ img.logo-zoom:hover {
   background-color: #ffffff;
 }
 
+/* === Formular UX: Status-Feedback + disabled Button === */
+
+.form-status {
+  margin-top: 0.5rem;
+}
+
+.form-status--success {
+  color: #1f7a3a;
+}
+
+.form-status--error {
+  color: #b42318;
+}
+
+.form-status--info {
+  color: var(--grey);
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 /* Scroll-to-top Button */
 .scroll-top-btn {
   /* Styling über Utility-Klassen im HTML */
@@ -311,8 +334,24 @@ body.lightbox-open {
 
 /* Mobile-Spacing */
 @media (max-width: 640px) {
-  section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  /* Nav Buttons auf Mobile wie einfache Links */
+  .btn-nav {
+    padding: 0.15rem 0.25rem; /* deutlich kleiner */
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0; /* keine Pill-Form */
+    font-size: 0.8rem; /* kleiner */
+    letter-spacing: 0.01em;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .btn-nav:hover {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.9;
   }
 }

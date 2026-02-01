@@ -264,25 +264,47 @@
                 class="relative rounded-md overflow-hidden shadow-md bg-white"
               >
                 <form
+                  id="contact-form"
+                  action="https://formspree.io/f/xeezoezy"
+                  method="POST"
                   class="relative p-6 sm:p-8 space-y-3 text-gray-900 text-sm w-full flex flex-col"
                 >
+                  <!-- Honeypot gegen Spam (unsichtbar) -->
+                  <input
+                    type="text"
+                    name="_gotcha"
+                    style="display: none"
+                    tabindex="-1"
+                    autocomplete="off"
+                  />
+
+                  <!-- Optional: Betreff -->
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="Neue Anfrage über Website (Maier & Lehmann)"
+                  />
+
                   <input
                     type="text"
                     name="name"
                     placeholder="Name"
                     class="w-full form-field"
+                    required
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="E-Mail"
                     class="w-full form-field"
+                    required
                   />
                   <textarea
                     name="message"
                     rows="4"
                     placeholder="Nachricht..."
                     class="w-full form-field"
+                    required
                   ></textarea>
 
                   <button
@@ -291,6 +313,12 @@
                   >
                     Nachricht senden
                   </button>
+
+                  <p
+                    id="form-status"
+                    class="text-xs mt-2 hidden form-status"
+                    aria-live="polite"
+                  ></p>
                 </form>
               </div>
             </div>

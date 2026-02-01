@@ -171,4 +171,89 @@ document.addEventListener("DOMContentLoaded", () => {
       smoothScrollTo(targetY, 900);
     });
   });
+
+  /* === Kontaktformular (Formspree) ===
+     Voraussetzung im HTML:
+     - <form id="contact-form" action="https://formspree.io/f/xeezoezy" method="POST">
+     - <p id="form-status"></p>
+  */
+
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("form-status");
+
+  const setStatus = (type, message) => {
+    if (!statusEl) return;
+
+    statusEl.classList.remove("hidden");
+    statusEl.classList.remove(
+      "form-status--success",
+      "form-status--error",
+      "form-status--info"
+    );
+
+    if (type === "success") statusEl.classList.add("form-status--success");
+    if (type === "error") statusEl.classList.add("form-status--error");
+    if (type === "info") statusEl.classList.add("form-status--info");
+
+    statusEl.textContent = message;
+  };
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Safety: falls action fehlt, nicht „ins Leere“ senden
+      const action = form.getAttribute("action");
+      if (!action) {
+        setStatus(
+          "error",
+          "Formular ist nicht korrekt konfiguriert (action fehlt)."
+        );
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.textContent : "";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sende…";
+      }
+
+      form.setAttribute("aria-busy", "true");
+      setStatus("info", "Sende Nachricht…");
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(action, {
+          method: (form.getAttribute("method") || "POST").toUpperCase(),
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (res.ok) {
+          form.reset();
+          setStatus("success", "Danke! Wir melden uns kurzfristig zurück.");
+        } else {
+          const data = await res.json().catch(() => ({}));
+          const msg =
+            (data && data.errors && data.errors[0] && data.errors[0].message) ||
+            "Leider hat das Senden nicht geklappt. Bitte später erneut versuchen.";
+          setStatus("error", msg);
+        }
+      } catch (err) {
+        setStatus(
+          "error",
+          "Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen."
+        );
+      } finally {
+        form.setAttribute("aria-busy", "false");
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText || "Nachricht senden";
+        }
+      }
+    });
+  }
 });
