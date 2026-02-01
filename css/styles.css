@@ -229,7 +229,44 @@ img.logo-zoom:hover {
   outline: 2px solid rgba(241, 221, 202, 0.95);
   outline-offset: 2px;
 }
+/* Quote-Optik nur für den Einleitungs-Absatz */
+.intro-quote {
+  position: relative;
+  max-width: 48rem; /* ~ max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem; /* Platz für Linie */
+  padding-top: 0.25rem; /* Platz fürs große “ */
+}
 
+/* linke Linie */
+.intro-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  width: 4px;
+  border-radius: 999px;
+  background: rgba(241, 221, 202, 0.22);
+}
+.intro-quote p {
+  line-height: 1.7;
+}
+
+@media (min-width: 1024px) {
+  .intro-quote p {
+    line-height: 1.85;
+  }
+}
+.quote-open {
+  color: rgba(241, 221, 202, 0.5);
+  font-family: ui-serif, Georgia, serif;
+}
+.quote-close {
+  color: rgba(241, 221, 202, 0.5);
+  font-family: ui-serif, Georgia, serif;
+}
 /* Form-Felder */
 .form-field {
   border-radius: 0.375rem;
