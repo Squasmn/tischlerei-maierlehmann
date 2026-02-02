@@ -2,7 +2,7 @@
 html {
   scroll-behavior: smooth;
   /* Fullpage-Scroll-Snap */
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 /* scroll snap für sections*/

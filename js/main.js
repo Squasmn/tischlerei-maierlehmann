@@ -168,7 +168,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (targetY < 0) targetY = 0;
       }
 
+      // Safari/WebKit Fix: Scroll-Snap während programmatischem Scrollen deaktivieren
+      const prevSnap = docEl.style.scrollSnapType;
+      docEl.style.scrollSnapType = "none";
+
       smoothScrollTo(targetY, 900);
+
+      setTimeout(() => {
+        // Snap nur wieder aktivieren, wenn wir nicht bewusst am Footer sind
+        if (id !== "arbeiten-footer") {
+          docEl.style.scrollSnapType = prevSnap || "y proximity";
+        }
+      }, 950);
     });
   });
 
