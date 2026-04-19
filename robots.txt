@@ -1,1 +1,4 @@
-https://www.online-handelsregister.de/handelsregisterauszug/nw/Duesseldorf/HRB/111922/Maier-Lehmann-GmbH
+User-agent: *
+Disallow:
+
+Sitemap: https://tischlerei-maierlehmann.de/sitemap.xml
